@@ -1,0 +1,6 @@
+model/
+__pycache__/
+.ipynb_checkpoints/
+.sfdx/
+venv/
+*.pyc

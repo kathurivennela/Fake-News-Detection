@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Admin Dashboard</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- ✅ Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+
+/* 🌐 Body */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #eef2f3, #dfe9f3);
+}
+
+/* 🔝 Navbar */
+.navbar {
+    background: linear-gradient(90deg, #141e30, #243b55);
+    padding: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+
+/* ✨ Center Title */
+.navbar-brand {
+    font-weight: bold;
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+/* Cards */
+.card {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+/* 🎨 Home Cards */
+.home-card {
+    color: white;
+    padding: 25px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.home-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.users-card { background: linear-gradient(45deg, #007bff, #00c6ff); }
+.pred-card { background: linear-gradient(45deg, #ff416c, #ff4b2b); }
+.graph-card { background: linear-gradient(45deg, #28a745, #5eff8a); }
+
+/* 📊 Dark Table */
+.custom-table {
+    background-color: #2c2f33;
+    color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.custom-table thead th {
+    background-color: #1f2226 !important;
+    color: #ffffff !important;
+    border: 1px solid #555;
+    padding: 12px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.custom-table td {
+    border: 1px solid #444;
+    padding: 12px;
+}
+
+.custom-table tbody tr:nth-child(even) {
+    background-color: #343a40;
+}
+
+.custom-table tbody tr:hover {
+    background-color: #495057;
+}
+
+
+/* 📌 Top actions */
+.top-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+/* 🔘 Buttons */
+.btn-home {
+    border-radius: 20px;
+}
+
+/* 📈 Graph */
+#graphs img {
+    max-width: 80%;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    transition: 0.3s;
+    margin-bottom: 20px;
+}
+#graphs img:hover {
+    transform: scale(1.02);
+}
+
+
+</style>
+</head>
+
+<body>
+
+<!-- ✅ Navbar -->
+<nav class="navbar navbar-dark">
+<div class="container-fluid position-relative">
+
+    <!-- Center Title -->
+    <span class="navbar-brand position-absolute top-50 start-50 translate-middle">
+        Admin Dashboard
+    </span>
+
+    <!-- Right Side -->
+    <div class="d-flex ms-auto">
+
+        <!-- Back Button -->
+        <button id="backBtn" class="btn btn-light btn-home me-2" 
+                onclick="showModule('home')" style="display:none;">
+            ⬅ Back
+        </button>
+
+        <!-- Logout -->
+        <a class="btn btn-danger btn-home" href="{{ url_for('logout') }}">
+            <i class="bi bi-box-arrow-right"></i> Logout
+        </a>
+
+    </div>
+</div>
+</nav>
+
+<!-- Content -->
+<div class="container mt-4">
+
+<!-- ================= HOME ================= -->
+<div id="home" class="card module text-center p-4">
+    <h2>Welcome Admin 👋</h2>
+    <div class="row mt-4">
+
+        <div class="col-md-4">
+            <div class="home-card users-card" onclick="showModule('users')">
+                <i class="bi bi-people-fill fs-1"></i>
+                <h4>Users</h4>
+                <p>Manage registered users</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="home-card pred-card" onclick="showModule('predictions')">
+                <i class="bi bi-shield-check fs-1"></i>
+                <h4>Predictions</h4>
+                <p>View detection results</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="home-card graph-card" onclick="showModule('graphs')">
+                <i class="bi bi-bar-chart-fill fs-1"></i>
+                <h4>Graphs</h4>
+                <p>Analyze statistics</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- ================= USERS ================= -->
+<div id="users" class="card module p-4" style="display:none;">
+    <h4 class="text-center mb-4">Registered Users</h4>
+    <table class="table custom-table text-center">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Action</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for u in users %}
+            <tr>
+                <td>{{ u[0] }}</td>
+                <td>{{ u[1] }}</td>
+                <td>{{ u[2] }}</td>
+                <td>{{ u[4] }}</td>
+                <td>
+                    <!-- Delete form -->
+                    <form action="{{ url_for('delete_user', user_id=u[0]) }}" method="POST" style="display:inline;">
+                        <button type="submit" class="btn btn-danger btn-sm" 
+                                onclick="return confirm('Are you sure you want to delete this user?');">
+                        Delete        
+                        </button>
+                    </form>
+                </td>
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- ================= PREDICTIONS ================= -->
+<div id="predictions" class="card module p-4" style="display:none;">
+    <h4 class="text-center mb-4">Prediction History</h4>
+    <table class="table custom-table text-center">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>User</th>
+                <th>News Text</th>
+                <th>Result</th>
+                <th>Confidence</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in predictions %}
+            <tr>
+                <td>{{ p[0] }}</td>
+                <td>{{ p[1] }}</td>
+                <td>{{ p[2] }}</td>
+                <td>
+                    {% if p[3] == 'FAKE' %}
+                        <span class="badge bg-danger">{{ p[3] }}</span>
+                    {% else %}
+                        <span class="badge bg-success">{{ p[3] }}</span>
+                    {% endif %}
+                </td>
+            <td>{{ '%.2f' % (p[4]*100) }}%</td>
+           </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- ================= GRAPHS ================= -->
+<div id="graphs" class="card module p-4" style="display:none;">
+    <!-- Fake vs Real News Graph -->
+    <div class="top-actions">
+        <h4></h4>
+    </div>
+     <div class="text-center mt-3">
+        <img src="{{ url_for('static', filename='dataset_graph.png') }}" class="img-fluid" alt="Fake vs Real Graph">
+    </div>
+    <div class="text-center mt-3">
+        <img src="{{ url_for('static', filename='classification_report.png') }}" class="img-fluid" alt="Fake vs Real Graph">
+    </div>
+    <div class="text-center mt-3">
+        <img src="{{ url_for('static', filename='graph.png') }}" class="img-fluid" alt="Fake vs Real Graph">
+    </div>
+    </div>
+    </div>
+
+<!-- JS -->
+<script>
+function showModule(id){
+    document.querySelectorAll('.module').forEach(m => m.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+
+    if(id === 'home'){
+        document.getElementById('backBtn').style.display = 'none';
+    } else {
+        document.getElementById('backBtn').style.display = 'inline-block';
+    }
+}
+</script>
+
+</body>
+</html>
