@@ -94,11 +94,11 @@ http://127.0.0.1:5000/
 ###  News Detection Dashboard
 ![News Detection Dashboard](Screenshots/newsdetection_result.jpg)
 
-### Prediction History
-![Prediction History](Screenshots/prediction_history.jpg)
-
 ### Admin Dashboard
 ![Admin Dashboard](Screenshots/adminhome.jpg)
+
+### Prediction History
+![Prediction History](Screenshots/prediction_history.jpg)
 
 ### 📈 Graph Analytics
 ![Graph Analytics](Screenshots/graph.jpg)
