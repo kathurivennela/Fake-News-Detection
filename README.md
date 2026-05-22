@@ -6,7 +6,7 @@ The application uses the BERT (Bidirectional Encoder Representations from Transf
 The project is designed to help reduce misinformation spread across digital platforms by providing reliable news verification.
 
 # Features
-# User Module:
+## User Module:
 - User Registration and Login
 - Detect Fake or Real News
 - Upload News Text
@@ -15,24 +15,24 @@ The project is designed to help reduce misinformation spread across digital plat
 - Confidence Score Display
 - User Prediction history
   
-# Admin Module:
+## Admin Module:
 - Secure Admin Login
 - View Registered Users
 - View Prediction History
 - Analyze Graph Reports
 - Dashboard Interface
 
-# Analytics & Visualization
+## Analytics & Visualization
 - Fake vs Real News Graph
 - Classification Report Graph
 - Accuracy Analysis
 - Prediction Statistics
 
-# OCR Integration
+## OCR Integration
 The project integrates Tesseract OCR to extract text from uploaded news images and screenshots.  
 The extracted text is then analyzed using the BERT Transformer model to predict whether the news is REAL or FAKE.
 
-# OCR Workflow
+## OCR Workflow
 Image Upload → Text Extraction → Fake News Prediction → Result Display
 
 ## Transformer Model Used
@@ -40,9 +40,9 @@ Image Upload → Text Extraction → Fake News Prediction → Result Display
 The transformer model is trained using labeled fake and real news datasets for accurate classification and contextual understanding of news articles.
 
 # TECHNOLOGIES USED:
-## Technology - Purpose 
-Python - Backend Development 
-Flask -  Web Framework 
+## |Technology | Purpose |
+|Python | Backend Development|
+|Flask |  Web Framework |
 HTML/CSS - Frontend Design 
 Bootstrap - Responsive UI 
 JavaScript - Dynamic Interaction 
@@ -66,23 +66,23 @@ Fake-News-Detection/
 ```
 
 # Installation and Setup
-# 1️⃣ Clone Repository
+### 1️⃣ Clone Repository
 git clone https://github.com/kathurivennela/Fake-News-Detection.git
-# 2️⃣ Open Project Directory
+### 2️⃣ Open Project Directory
 cd Fake-News-Detection
-# 3️⃣ Install Required Libraries
+### 3️⃣ Install Required Libraries
 pip install -r requirements.txt
-# 4️⃣ Run Flask Application
+### 4️⃣ Run Flask Application
 python app.py
-# 5️⃣ Open in Browser
+### 5️⃣ Open in Browser
 http://127.0.0.1:5000/
 
 ## 📊 Model Performance
-# Metric - Score 
-Accuracy - 100%
-Precision - 100% 
-Recall - 100% 
-F1-Score - 100% 
+# | Metric | Score |
+|Accuracy | 100% |
+|Precision | 100% |
+|Recall | 100% |
+|F1-Score | 100% |
 
 # Project Screenshots
 
@@ -104,7 +104,7 @@ F1-Score - 100%
 ## 📈 Graph Analytics
 ![Graph Analytics](screenshots/graph.jpg)
 
-# FUTURE ENHANCEMENTS
+# Future Enhancements
 - Real-time News API Integration
 - Multi-language Fake News Detection
 - AI-based News Summarization
