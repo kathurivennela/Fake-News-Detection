@@ -86,22 +86,22 @@ http://127.0.0.1:5000/
 
 # Project Screenshots
 ### 🏠 Home Page
-![Home Page](screenshots/homepage.jpg)
+![Home Page](Screenshots/homepage.jpg)
 
 ### 👤 User Dashboard
-![User Dashboard](screenshots/userloginpage.jpg)
+![User Dashboard](Screenshots/userloginpage.jpg)
 
 ###  News Detection Dashboard
-![News Detection Dashboard](screenshots/newsdetection_result.jpg)
+![News Detection Dashboard](Screenshots/newsdetection_result.jpg)
 
 ### Prediction History
-![Prediction History](screenshots/prediction_history.jpg)
+![Prediction History](Screenshots/prediction_history.jpg)
 
 ### Admin Dashboard
-![Admin Dashboard](screenshots/adminhome.jpg)
+![Admin Dashboard](Screenshots/adminhome.jpg)
 
 ### 📈 Graph Analytics
-![Graph Analytics](screenshots/graph.jpg)
+![Graph Analytics](Screenshots/graph.jpg)
 
 # Future Enhancements
 - Real-time News API Integration
