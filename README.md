@@ -1,11 +1,11 @@
 # AUTOMATED FAKE NEWS DETECTION USING TRANSFORMER MODELS
 
-# PROJECT OVERVIEW
+# Project Overview
 Automated Fake News Detection using Transformer Models is a web-based intelligent system developed to identify whether a news article is **REAL** or **FAKE** using advanced Natural Language Processing (NLP) techniques and Transformer-based deep learning models.
 The application uses the BERT (Bidirectional Encoder Representations from Transformers) model for accurate classification of news content. The system provides a user-friendly interface with separate modules for users and administrators.
 The project is designed to help reduce misinformation spread across digital platforms by providing reliable news verification.
 
-# FEATURES
+# Features
 # User Module:
 - User Registration and Login
 - Detect Fake or Real News
