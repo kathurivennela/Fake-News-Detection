@@ -1,9 +1,7 @@
 # AUTOMATED FAKE NEWS DETECTION USING TRANSFORMER MODELS
 
 # Project Overview
-Automated Fake News Detection using Transformer Models is a web-based intelligent system developed to identify whether a news article is **REAL** or **FAKE** using advanced Natural Language Processing (NLP) techniques and Transformer-based deep learning models.
-The application uses the BERT (Bidirectional Encoder Representations from Transformers) model for accurate classification of news content. The system provides a user-friendly interface with separate modules for users and administrators.
-The project is designed to help reduce misinformation spread across digital platforms by providing reliable news verification.
+Automated Fake News Detection using Transformer Models is a web-based intelligent system developed to identify whether a news article is **REAL** or **FAKE** using advanced Natural Language Processing (NLP) techniques and Transformer-based deep learning models.The application uses the BERT (Bidirectional Encoder Representations from Transformers) model for accurate classification of news content.The system provides a user-friendly interface with separate modules for users and administrators.The project is designed to help reduce misinformation spread across digital platforms by providing reliable news verification.
 
 # Features
 ## User Module:
@@ -36,22 +34,23 @@ The extracted text is then analyzed using the BERT Transformer model to predict 
 Image Upload → Text Extraction → Fake News Prediction → Result Display
 
 ## Transformer Model Used
-- **BERT (Bidirectional Encoder Representations from Transformers)**
+- **BERT (Bidirectional Encoder Representations from Transformers)**.
 The transformer model is trained using labeled fake and real news datasets for accurate classification and contextual understanding of news articles.
 
-# TECHNOLOGIES USED:
+# Technologies used
 ## |Technology | Purpose |
-|Python | Backend Development|
-|Flask |  Web Framework |
-HTML/CSS - Frontend Design 
-Bootstrap - Responsive UI 
-JavaScript - Dynamic Interaction 
-MySQL - Database 
-Transformers(BERT) - Fake News Detection 
-Tesseract OCR - Text Extraction from Images 
-Scikit-learn - Performance Evaluation 
-Pandas - Data Processing 
-Matplotlib - Graph Visualization 
+|------------|-------------|
+| Python | Backend Development|
+| Flask |  Web Framework |
+| HTML/CSS | Frontend Design |
+| Bootstrap | Responsive UI |
+| JavaScript | Dynamic Interaction |
+| MySQL | Database |
+| Transformers(BERT) | Fake News Detection |
+| Tesseract OCR | Text Extraction from Images| 
+| Scikit-learn | Performance Evaluation |
+| Pandas | Data Processing |
+| Matplotlib | Graph Visualization |
 
 # 📂 Project Structure
 ```bash
@@ -78,30 +77,31 @@ python app.py
 http://127.0.0.1:5000/
 
 ## 📊 Model Performance
-# | Metric | Score |
-|Accuracy | 100% |
-|Precision | 100% |
-|Recall | 100% |
-|F1-Score | 100% |
+### | Metric | Score |
+|--------|-------|
+| Accuracy | 100% |
+| Precision | 100% |
+| Recall | 100% |
+| F1-Score | 100% |
+
 
 # Project Screenshots
-
-## 🏠 Home Page
+### 🏠 Home Page
 ![Home Page](screenshots/homepage.jpg)
 
-## 👤 User Dashboard
+### 👤 User Dashboard
 ![User Dashboard](screenshots/userloginpage.jpg)
 
-##  News Detection Dashboard
+###  News Detection Dashboard
 ![News Detection Dashboard](screenshots/newsdetection_result.jpg)
 
-## Prediction History
+### Prediction History
 ![Prediction History](screenshots/prediction_history.jpg)
 
-## Admin Dashboard
+### Admin Dashboard
 ![Admin Dashboard](screenshots/adminhome.jpg)
 
-## 📈 Graph Analytics
+### 📈 Graph Analytics
 ![Graph Analytics](screenshots/graph.jpg)
 
 # Future Enhancements
