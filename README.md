@@ -39,7 +39,6 @@ The transformer model is trained using labeled fake and real news datasets for a
 
 # Technologies used
 ## |Technology | Purpose |
-|------------|-------------|
 | Python | Backend Development|
 | Flask |  Web Framework |
 | HTML/CSS | Frontend Design |
@@ -76,9 +75,9 @@ python app.py
 ### 5️⃣ Open in Browser
 http://127.0.0.1:5000/
 
+
 ## 📊 Model Performance
 ### | Metric | Score |
-|--------|-------|
 | Accuracy | 100% |
 | Precision | 100% |
 | Recall | 100% |
